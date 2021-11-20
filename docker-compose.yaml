@@ -7,11 +7,14 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: masta@gibdon.com
       PGADMIN_DEFAULT_PASSWORD: pregust0fth3w!nd
-      PGADMIN_SERVER_JSON_FILE: /pgadmin4-config/servers.json
+      PGADMIN_SERVER_JSON_FILE: /pgplayground/servers.json
     ports:
       - 8088:80
     volumes:
-      - ./pgadmin4-config/:/pgadmin4-config/
+      - ./:/pgplayground/
+      - $HOME:$HOME
+      - $PWD:$PWD
+      - /tmp/:/host-tmp/
 
   # https://hub.docker.com/_/postgres/
   pgserver:
@@ -24,4 +27,7 @@ services:
       - 5432:5432
 
     volumes:
+      - ./:/pgplayground/
+      - $HOME:$HOME
+      - $PWD:$PWD
       - /tmp/:/host-tmp/
