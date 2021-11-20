@@ -1,3 +1,4 @@
+version: '3.1'
 
 services:
   # https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html
@@ -6,9 +7,11 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: masta@gibdon.com
       PGADMIN_DEFAULT_PASSWORD: pregust0fth3w!nd
+    ports:
+      - 8088:80
 
   # https://hub.docker.com/_/postgres/
-  postgres:
+  pgserver:
     image: postgres:12
     environment:
       POSTGRES_USER: masta
