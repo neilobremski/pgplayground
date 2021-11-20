@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "pgserver": {
+            "Name": "pgserver",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "masta",
+            "Host": "pgserver",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "masta"
+        }
+    }
+}
